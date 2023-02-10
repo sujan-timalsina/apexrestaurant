@@ -7,11 +7,11 @@ namespace ApexRestaurant.Repository
 {
     public static class RepositoryModule
     {
-        public static void Register(IServiceCollection services, string connection, string migrationsAssembly)
+        public static void Register(IServiceCollection services)
         {
             services.AddDbContext<RestaurantContext>(options => options.UseSqlServer(
-                connection,
-                builder => builder.MigrationsAssembly(migrationsAssembly)
+                @"Server=DESKTOP-13L30S5\SQLEXPRESS;Initial Catalog=ApexRestaurantDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False",
+                builder => builder.MigrationsAssembly(Assembly.GetExecutingAssembly().GetName().Name)
             ));
 
             services.AddTransient<ICustomerRepository, CustomerRepository>();
