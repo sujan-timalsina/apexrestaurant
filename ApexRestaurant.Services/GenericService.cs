@@ -39,5 +39,10 @@ namespace ApexRestaurant.Services
             await EntityRepository.Delete(entity);
         }
 
+        public async Task DeleteById(int id)
+        {
+            await EntityRepository.DeleteById(id);
+        }
+
     }
 }

@@ -10,5 +10,6 @@ namespace ApexRestaurant.Repository
         Task Insert(T entity);
         Task Update(T entity);
         Task Delete(T entity);
+        Task DeleteById(int id);
     }
 }

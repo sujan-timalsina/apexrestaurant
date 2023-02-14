@@ -43,10 +43,10 @@ namespace ApexRestaurant.Api.Controllers
             return Ok();
         }
 
-        [HttpDelete()]
-        public async Task<IActionResult> DeleteCustomer([FromBody] Customer customer)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCustomer(int id)
         {
-            await _customerService.Delete(customer);
+            await _customerService.DeleteById(id);
             return Ok();
         }
     }
