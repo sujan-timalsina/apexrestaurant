@@ -26,7 +26,7 @@ namespace Samaj.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            RepositoryModule.Register(services);
+            RepositoryModule.Register(services, Configuration.GetConnectionString("DefaultConnection"));
             ServiceModule.Register(services);
             services.AddControllers();
             services.AddSwaggerGen();
