@@ -118,10 +118,8 @@ public class CustomerController : Controller
         return View(customer);
     }
 
-    [HttpDelete]
     public ActionResult Delete(int id)
     {
-        Console.WriteLine("Delete: " + id);
         using (var client = new HttpClient())
         {
             client.BaseAddress = new Uri(baseUri ?? throw new InvalidOperationException("baseUri is null"));
